@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>التصدير | برنامج مؤشرات الأداء</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="export-excel">
+  <a class="skip-link" href="#mainContent">تجاوز إلى المحتوى</a>
+  <header class="topbar">
+    <a class="brand" href="dashboard.html" aria-label="الرئيسية">
+      <img src="assets/img/logo.png" alt="أمانة منطقة المدينة المنورة">
+      <span>برنامج مؤشرات الأداء</span>
+    </a>
+    <div class="topbar-actions">
+      <span class="user-badge" data-user-badge></span>
+      <button type="button" class="button ghost" data-logout>تسجيل الخروج</button>
+    </div>
+  </header>
+
+  <div class="app-layout">
+    <aside class="sidebar" aria-label="التنقل الرئيسي">
+      <nav class="nav-list">
+        <a class="nav-link" href="dashboard.html">لوحة القياس</a>
+        <a class="nav-link" href="unit-entry.html">إدخال المؤشرات</a>
+        <a class="nav-link" href="kpi-library.html">مكتبة المؤشرات</a>
+        <a class="nav-link" href="reports.html">التقارير</a>
+        <a class="nav-link" href="export-excel.html">التصدير</a>
+        <a class="nav-link" href="admin.html" data-admin-only>الإدارة</a>
+      </nav>
+    </aside>
+
+    <main id="mainContent" class="page-content">
+      <section class="page-heading">
+        <p class="eyebrow">تصدير البيانات</p>
+        <h1>Excel ونسخة تشغيلية</h1>
+        <p>استخراج بيانات المؤشرات في أوراق عمل منفصلة عند توفر SheetJS.</p>
+      </section>
+
+      <section class="panel">
+        <div class="panel-heading">
+          <h2>ملف الأداء</h2>
+          <p id="exportMessage" class="form-message" role="status"></p>
+        </div>
+        <div class="action-row">
+          <button id="exportExcelButton" type="button" class="button primary">تصدير Excel</button>
+          <button id="exportCsvButton" type="button" class="button ghost">تصدير CSV</button>
+          <button id="exportBackupButton" type="button" class="button ghost">تصدير JSON</button>
+          <button id="exportPdfButton" type="button" class="button ghost">تقرير PDF</button>
+          <button id="exportPptButton" type="button" class="button ghost">عرض PowerPoint</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-heading">
+          <h2>محتويات التصدير</h2>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>ورقة العمل</th>
+                <th>المحتوى</th>
+              </tr>
+            </thead>
+            <tbody id="exportPreviewBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script defer src="assets/js/storage.js"></script>
+  <script defer src="assets/js/kpi.js"></script>
+  <script defer src="assets/js/auth.js"></script>
+  <script defer src="assets/js/export-excel.js"></script>
+  <script defer src="assets/js/app.js"></script>
+</body>
+</html>

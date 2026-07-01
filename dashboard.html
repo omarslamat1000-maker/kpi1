@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>لوحة القياس | برنامج مؤشرات الأداء</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="dashboard">
+  <a class="skip-link" href="#mainContent">تجاوز إلى المحتوى</a>
+  <header class="topbar">
+    <a class="brand" href="dashboard.html" aria-label="الرئيسية">
+      <img src="assets/img/logo.png" alt="أمانة منطقة المدينة المنورة">
+      <span>برنامج مؤشرات الأداء</span>
+    </a>
+    <div class="topbar-actions">
+      <span class="user-badge" data-user-badge></span>
+      <button type="button" class="button ghost" data-logout>تسجيل الخروج</button>
+    </div>
+  </header>
+
+  <div class="app-layout">
+    <aside class="sidebar" aria-label="التنقل الرئيسي">
+      <nav class="nav-list">
+        <a class="nav-link" href="dashboard.html">لوحة القياس</a>
+        <a class="nav-link" href="unit-entry.html">إدخال المؤشرات</a>
+        <a class="nav-link" href="kpi-library.html">مكتبة المؤشرات</a>
+        <a class="nav-link" href="reports.html">التقارير</a>
+        <a class="nav-link" href="export-excel.html">التصدير</a>
+        <a class="nav-link" href="admin.html" data-admin-only>الإدارة</a>
+      </nav>
+    </aside>
+
+    <main id="mainContent" class="page-content">
+      <section class="page-heading">
+        <p class="eyebrow">لوحة نائب الأمين للبنية التحتية</p>
+        <h1>مؤشرات الأداء حسب الوحدات</h1>
+        <p>عرض تنفيذي للحالة الحالية، متوسط الأداء، والمؤشرات التي تحتاج متابعة.</p>
+      </section>
+
+      <section id="summaryCards" class="summary-grid" aria-label="ملخص الأداء"></section>
+
+      <section class="dashboard-grid">
+        <div class="panel">
+          <div class="panel-heading">
+            <h2>أداء الوحدات</h2>
+          </div>
+          <canvas id="unitPerformanceChart" height="260" aria-label="رسم أداء الوحدات"></canvas>
+        </div>
+        <div class="panel">
+          <div class="panel-heading">
+            <h2>توزيع الحالات</h2>
+          </div>
+          <canvas id="statusDistributionChart" height="260" aria-label="رسم توزيع الحالات"></canvas>
+        </div>
+      </section>
+
+      <section class="chart-grid">
+        <div class="panel">
+          <div class="panel-heading">
+            <h2>المؤشرات حسب النوع</h2>
+          </div>
+          <canvas id="typeDistributionChart" height="260" aria-label="رسم توزيع المؤشرات حسب النوع"></canvas>
+        </div>
+        <div class="panel">
+          <div class="panel-heading">
+            <h2>المؤشرات حسب الدورية</h2>
+          </div>
+          <canvas id="frequencyDistributionChart" height="260" aria-label="رسم توزيع المؤشرات حسب الدورية"></canvas>
+        </div>
+        <div class="panel">
+          <div class="panel-heading">
+            <h2>مؤشرات تحتاج تدخلًا</h2>
+          </div>
+          <canvas id="interventionChart" height="260" aria-label="رسم المؤشرات التي تحتاج تدخلًا حسب الوحدة"></canvas>
+        </div>
+      </section>
+
+      <section class="dashboard-grid">
+        <div class="panel">
+          <div class="panel-heading">
+            <h2>أعلى 5 مؤشرات أداء</h2>
+          </div>
+          <canvas id="topKpisChart" height="260" aria-label="رسم أعلى خمسة مؤشرات أداء"></canvas>
+        </div>
+        <div class="panel">
+          <div class="panel-heading">
+            <h2>أدنى 5 مؤشرات أداء</h2>
+          </div>
+          <canvas id="bottomKpisChart" height="260" aria-label="رسم أدنى خمسة مؤشرات أداء"></canvas>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-heading">
+          <h2>ترتيب الوحدات</h2>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>الوحدة</th>
+                <th>عدد المؤشرات</th>
+                <th>متوسط الأداء</th>
+                <th>الحالة</th>
+              </tr>
+            </thead>
+            <tbody id="unitPerformanceTable"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-heading">
+          <h2>مؤشرات تحتاج متابعة</h2>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>المؤشر</th>
+                <th>الوحدة</th>
+                <th>الأداء</th>
+                <th>الإجراء التصحيحي</th>
+              </tr>
+            </thead>
+            <tbody id="riskTable"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script defer src="assets/js/storage.js"></script>
+  <script defer src="assets/js/kpi.js"></script>
+  <script defer src="assets/js/auth.js"></script>
+  <script defer src="assets/js/charts.js"></script>
+  <script defer src="assets/js/app.js"></script>
+</body>
+</html>

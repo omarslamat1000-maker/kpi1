@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>تسجيل الدخول | برنامج مؤشرات الأداء</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="login" class="login-page">
+  <main class="login-shell">
+    <section class="login-brand" aria-labelledby="loginTitle">
+      <div class="login-logo-wrap">
+        <img src="assets/img/logo.png" alt="أمانة منطقة المدينة المنورة" class="login-logo">
+      </div>
+      <p class="eyebrow">وكالة البنية التحتية</p>
+      <h1 id="loginTitle">منصة مؤشرات الأداء</h1>
+      <p>واجهة تنفيذية موحدة لمتابعة المستهدفات، الفعلي، الحالة اللونية، والإجراءات التصحيحية للوحدات.</p>
+      <div class="login-highlights" aria-label="ملخص المنصة">
+        <article>
+          <strong>7</strong>
+          <span>جهات</span>
+        </article>
+        <article>
+          <strong>4</strong>
+          <span>أرباع</span>
+        </article>
+        <article>
+          <strong>12</strong>
+          <span>شهر</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="login-card" aria-labelledby="loginFormTitle">
+      <div class="login-card-header">
+        <p class="eyebrow">دخول المنصة</p>
+        <h2 id="loginFormTitle">تسجيل الدخول</h2>
+        <p>اختر الحساب ثم أدخل كلمة المرور للوصول إلى لوحة المتابعة.</p>
+      </div>
+      <form id="loginForm" class="stacked-form">
+        <label class="login-field">
+          الحساب
+          <select name="userId" id="loginUserSelect" required></select>
+        </label>
+        <label class="login-field">
+          كلمة المرور
+          <input type="password" name="password" value="demo" autocomplete="current-password" required>
+        </label>
+        <p id="loginMessage" class="form-message" role="status"></p>
+        <button type="submit" class="button primary full-width">دخول</button>
+      </form>
+    </section>
+  </main>
+
+  <script defer src="assets/js/storage.js"></script>
+  <script defer src="assets/js/kpi.js"></script>
+  <script defer src="assets/js/auth.js"></script>
+  <script defer src="assets/js/app.js"></script>
+</body>
+</html>

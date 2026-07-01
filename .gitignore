@@ -1,0 +1,14 @@
+.DS_Store
+Thumbs.db
+node_modules/
+.pnpm-store/
+dist/
+.pages/
+github-pages-ready/
+github-pages-ready.zip
+kpi3-github-ready/
+kpi3-github-ready.zip
+.agents/
+*.log
+strategic-performance-video/node_modules/
+strategic-performance-video/

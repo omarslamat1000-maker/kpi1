@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>إدخال المؤشرات | برنامج مؤشرات الأداء</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="unit-entry">
+  <a class="skip-link" href="#mainContent">تجاوز إلى المحتوى</a>
+  <header class="topbar">
+    <a class="brand" href="dashboard.html" aria-label="الرئيسية">
+      <img src="assets/img/logo.png" alt="أمانة منطقة المدينة المنورة">
+      <span>برنامج مؤشرات الأداء</span>
+    </a>
+    <div class="topbar-actions">
+      <span class="user-badge" data-user-badge></span>
+      <button type="button" class="button ghost" data-logout>تسجيل الخروج</button>
+    </div>
+  </header>
+
+  <div class="app-layout">
+    <aside class="sidebar" aria-label="التنقل الرئيسي">
+      <nav class="nav-list">
+        <a class="nav-link" href="dashboard.html">لوحة القياس</a>
+        <a class="nav-link" href="unit-entry.html">إدخال المؤشرات</a>
+        <a class="nav-link" href="kpi-library.html">مكتبة المؤشرات</a>
+        <a class="nav-link" href="reports.html">التقارير</a>
+        <a class="nav-link" href="export-excel.html">التصدير</a>
+        <a class="nav-link" href="admin.html" data-admin-only>الإدارة</a>
+      </nav>
+    </aside>
+
+    <main id="mainContent" class="page-content">
+      <section class="page-heading">
+        <p class="eyebrow" id="entryScopeLabel">إدخال بيانات الوحدة</p>
+        <h1>المستهدفات والفعلي</h1>
+        <p>تحديث قيم المستهدف المرحلي والفعلي والملاحظات والإجراء التصحيحي.</p>
+      </section>
+
+      <section class="toolbar panel">
+        <label>
+          الوحدة
+          <select id="entryUnitSelect"></select>
+        </label>
+        <label>
+          السنة
+          <input id="entryYear" type="number" min="2024" max="2035">
+        </label>
+        <label>
+          الفترة
+          <select id="entryPeriod">
+            <option>الربع الأول</option>
+            <option>الربع الثاني</option>
+            <option>الربع الثالث</option>
+            <option>الربع الرابع</option>
+          </select>
+        </label>
+        <div class="period-picker">
+          <button id="entryMonthsButton" type="button" class="button ghost">الشهور المحددة</button>
+          <div id="entryMonthsPanel" class="month-panel" hidden>
+            <div class="month-panel-header">
+              <strong>اختيار الشهور</strong>
+              <span id="entryMonthsSummary" class="muted"></span>
+            </div>
+            <div id="entryMonthChecks" class="month-check-grid" aria-label="اختيار شهور الفترة"></div>
+          </div>
+        </div>
+        <span id="entryPeriodStatus" class="status-badge status-neutral"></span>
+        <button id="entrySaveButton" type="button" class="button primary">حفظ التحديثات</button>
+        <button id="sendReviewButton" type="button" class="button ghost">إرسال للمراجعة</button>
+      </section>
+
+      <section class="panel">
+        <div class="panel-heading">
+          <h2>مؤشرات الوحدة</h2>
+          <p id="entryMessage" class="form-message" role="status"></p>
+        </div>
+        <div class="table-wrap wide-table">
+          <table>
+            <thead>
+              <tr>
+                <th>المؤشر</th>
+                <th>المستهدف السنوي</th>
+                <th>المستهدف المرحلي</th>
+                <th>الفعلي</th>
+                <th>الأداء</th>
+                <th>الحالة</th>
+                <th>جودة البيانات</th>
+                <th>حالة المؤشر</th>
+                <th>الملاحظات</th>
+                <th>سبب الانحراف</th>
+                <th>الإجراء التصحيحي</th>
+                <th>رابط الدليل</th>
+              </tr>
+            </thead>
+            <tbody id="entryTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script defer src="assets/js/storage.js"></script>
+  <script defer src="assets/js/kpi.js"></script>
+  <script defer src="assets/js/auth.js"></script>
+  <script defer src="assets/js/app.js"></script>
+</body>
+</html>
